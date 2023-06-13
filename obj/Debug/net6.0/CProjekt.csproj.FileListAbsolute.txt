@@ -1,0 +1,15 @@
+D:\Desktop\C#\CProjekt\CProjekt\bin\Debug\net6.0\CProjekt.exe
+D:\Desktop\C#\CProjekt\CProjekt\bin\Debug\net6.0\CProjekt.deps.json
+D:\Desktop\C#\CProjekt\CProjekt\bin\Debug\net6.0\CProjekt.runtimeconfig.json
+D:\Desktop\C#\CProjekt\CProjekt\bin\Debug\net6.0\CProjekt.dll
+D:\Desktop\C#\CProjekt\CProjekt\bin\Debug\net6.0\CProjekt.pdb
+D:\Desktop\C#\CProjekt\CProjekt\obj\Debug\net6.0\CProjekt.csproj.AssemblyReference.cache
+D:\Desktop\C#\CProjekt\CProjekt\obj\Debug\net6.0\CProjekt.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desktop\C#\CProjekt\CProjekt\obj\Debug\net6.0\CProjekt.AssemblyInfoInputs.cache
+D:\Desktop\C#\CProjekt\CProjekt\obj\Debug\net6.0\CProjekt.AssemblyInfo.cs
+D:\Desktop\C#\CProjekt\CProjekt\obj\Debug\net6.0\CProjekt.csproj.CoreCompileInputs.cache
+D:\Desktop\C#\CProjekt\CProjekt\obj\Debug\net6.0\CProjekt.dll
+D:\Desktop\C#\CProjekt\CProjekt\obj\Debug\net6.0\refint\CProjekt.dll
+D:\Desktop\C#\CProjekt\CProjekt\obj\Debug\net6.0\CProjekt.pdb
+D:\Desktop\C#\CProjekt\CProjekt\obj\Debug\net6.0\CProjekt.genruntimeconfig.cache
+D:\Desktop\C#\CProjekt\CProjekt\obj\Debug\net6.0\ref\CProjekt.dll
