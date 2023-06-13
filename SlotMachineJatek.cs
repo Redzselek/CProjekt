@@ -18,19 +18,22 @@ namespace SlotMachine
             Console.WriteLine("│Üdvözöllek a félkarú rabló játékban!│");
             Console.WriteLine("└────────────────────────────────────┘");
 
-            Console.BackgroundColor = ConsoleColor.Black;
+            
             Console.ForegroundColor = ConsoleColor.White;
 
             while (true)
             {
                 Console.Write("\nAktuális egyenleg: ");
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine(egyenleg);
-                Console.BackgroundColor = ConsoleColor.Black;
+                Console.WriteLine(egyenleg+"ft");
+                
                 Console.ForegroundColor = ConsoleColor.White;
 
-                Console.Write("\nAdj meg egy tétet vagy írd be 'Kilépek' a kilépéshez: ");
-
+                Console.Write("\nAdj meg egy tétet vagy írd be hogy ");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("\"Kilépek\"");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write(" a kilépéshez: ");
                 string input = Console.ReadLine();
                 Console.Clear();
                 if (input.ToLower() == "kilépek")
@@ -40,7 +43,7 @@ namespace SlotMachine
                     Console.WriteLine("\n┌───────────────────────────┐");
                     Console.WriteLine("|Viszlát! A játék véget ért.│");
                     Console.WriteLine("└───────────────────────────┘");
-                    Console.BackgroundColor = ConsoleColor.Black;
+                    
                     Console.ForegroundColor = ConsoleColor.White;
                     break;
                 }
@@ -52,7 +55,7 @@ namespace SlotMachine
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("\nHibás tétet adtál meg. Próbáld újra!");
-                    Console.BackgroundColor = ConsoleColor.Black;
+                    
                     Console.ForegroundColor = ConsoleColor.White;
                     continue;
                 }
@@ -61,19 +64,19 @@ namespace SlotMachine
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Nincs elegendő egyenleged. Adj meg kisebb tétet!");
-                    Console.BackgroundColor = ConsoleColor.Black;
+                    
                     Console.ForegroundColor = ConsoleColor.White;
                     continue;
                 }
 
-                char[] tárcsák = GeneraltDobokockak();
-                KijelzesFélkaruRabló(tárcsák);
+                char[] tarcsak = GeneraltDobokockak();
+                KijelzesFelkaruRablo(tarcsak);
 
-                int aSzamlalo = SzimbolumSzamlalas(tárcsák, 'A');
-                int bSzamlalo = SzimbolumSzamlalas(tárcsák, 'B');
-                int cSzamlalo = SzimbolumSzamlalas(tárcsák, 'C');
-                int dSzamlalo = SzimbolumSzamlalas(tárcsák, 'D');
-                int eSzamlalo = SzimbolumSzamlalas(tárcsák, 'E');
+                int aSzamlalo = SzimbolumSzamlalas(tarcsak, 'A');
+                int bSzamlalo = SzimbolumSzamlalas(tarcsak, 'B');
+                int cSzamlalo = SzimbolumSzamlalas(tarcsak, 'C');
+                int dSzamlalo = SzimbolumSzamlalas(tarcsak, 'D');
+                int eSzamlalo = SzimbolumSzamlalas(tarcsak, 'E');
 
                 int szorzó = 0;
 
@@ -103,8 +106,8 @@ namespace SlotMachine
                     int nyeremeny = tetOsszeg * szorzó / 100;
                     egyenleg += nyeremeny;
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine($"Nyertél! Nyeremény: {nyeremeny}");
-                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.WriteLine($"Nyertél! Nyeremény: {nyeremeny}ft");
+                    
                     Console.ForegroundColor = ConsoleColor.White;
                 }
                 else
@@ -112,7 +115,7 @@ namespace SlotMachine
                     Console.ForegroundColor = ConsoleColor.Magenta;
                     egyenleg -= tetOsszeg;
                     Console.WriteLine("Sajnos nem nyertél.");
-                    Console.BackgroundColor = ConsoleColor.Black;
+                    
                     Console.ForegroundColor = ConsoleColor.White;
                 }
             }
@@ -120,16 +123,16 @@ namespace SlotMachine
 
         private char[] GeneraltDobokockak()
         {
-            char[] tárcsák = new char[3];
+            char[] tarcsak = new char[3];
             Random veletlen = new Random();
 
             for (int i = 0; i < 3; i++)
             {
                 int index = veletlen.Next(0, 5);
-                tárcsák[i] = SzimbolumLekerdezese(index);
+                tarcsak[i] = SzimbolumLekerdezese(index);
             }
 
-            return tárcsák;
+            return tarcsak;
         }
 
         private char SzimbolumLekerdezese(int index)
@@ -138,21 +141,21 @@ namespace SlotMachine
             return szimbolumok[index];
         }
 
-        private void KijelzesFélkaruRabló(char[] tárcsák)
+        private void KijelzesFelkaruRablo(char[] tarcsak)
         {
             Console.WriteLine("┌───────────────────────────────┐");
             Console.WriteLine("│\t \t \t \t│");
             Console.WriteLine("│\t \t \t \t│");
-            Console.WriteLine($"│\t{tárcsák[0]}\t{tárcsák[1]}\t{tárcsák[2]}\t│");
+            Console.WriteLine($"│\t{tarcsak[0]}\t{tarcsak[1]}\t{tarcsak[2]}\t│");
             Console.WriteLine("│\t \t \t \t│");
             Console.WriteLine("│\t \t \t \t│");
             Console.WriteLine("└───────────────────────────────┘");
         }
 
-        private int SzimbolumSzamlalas(char[] tárcsák, char szimbolum)
+        private int SzimbolumSzamlalas(char[] tarcsak, char szimbolum)
         {
             int szamlalo = 0;
-            foreach (char tarcsa in tárcsák)
+            foreach (char tarcsa in tarcsak)
             {
                 if (tarcsa == szimbolum)
                 {
